@@ -1,0 +1,247 @@
+/* ============================================
+   1. RESET
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* ============================================
+   2. HEADER
+   ============================================ */
+header {
+  background-color: #8e0000;
+  color: white;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 4px 0 12px;
+  opacity: 0.85;
+}
+
+/* ============================================
+   3. NAVIGATION
+   ============================================ */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   4. MAIN CONTENT
+   ============================================ */
+main {
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+/* ============================================
+   5. NOTE FORM
+   ============================================ */
+#note-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#note-form label {
+  width: 100%;
+  font-weight: bold;
+}
+
+#note-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font: inherit;
+}
+
+button {
+  background-color: #0ba184;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #088a70;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   6. NOTES LIST
+   ============================================ */
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note {
+  background-color: #fffbe6;
+  border-left: 4px solid #0ba184;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+/* ============================================
+   7. FEATURES GRID
+   ============================================ */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  background-color: #f0fdf9;
+  border: 1px solid #0ba184;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   8. TABLE
+   ============================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+thead tr {
+  background-color: #8e0000;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ============================================
+   9. FEEDBACK FORM
+   ============================================ */
+#feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#feedback-form label {
+  font-weight: bold;
+}
+
+#feedback-form input,
+#feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 1rem;
+}
+
+#feedback-form input:focus,
+#feedback-form textarea:focus {
+  outline: 2px solid #0ba184;
+  border-color: #0ba184;
+}
+
+#feedback-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ============================================
+   10. FOOTER
+   ============================================ */
+footer {
+  text-align: center;
+  color: #777;
+  padding: 24px 16px;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   11. MEDIA QUERY — phones (600px and below)
+   ============================================ */
+@media (max-width: 600px) {
+  header {
+    padding: 16px 12px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  #note-form {
+    flex-direction: column;
+  }
+
+  #note-form input,
+  #note-form button {
+    width: 100%;
+  }
+}
