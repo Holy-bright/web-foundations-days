@@ -1,0 +1,137 @@
+/* ── CSS Variables: define colours once, reuse everywhere ── */
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #222222;
+  --header-bg: #8e0000;
+  --header-text: #ffffff;
+  --border: #cccccc;
+  --btn-bg: #0ba184;
+  --btn-text: #ffffff;
+}
+
+/* ── Dark theme: redefine the variables only ── */
+body.dark {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --text: #e0e0e0;
+  --header-bg: #0f0f1a;
+  --header-text: #e0e0e0;
+  --border: #444444;
+  --btn-bg: #0ba184;
+  --btn-text: #ffffff;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Header ── */
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* ── Main content ── */
+main {
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+section {
+  background-color: var(--surface);
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 1rem;
+  background-color: var(--surface);
+  color: var(--text);
+  resize: vertical;
+}
+
+/* ── Character counter states ── */
+#char-count {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#char-count.warning {
+  color: orange;
+  font-weight: bold;
+}
+
+#char-count.over {
+  color: red;
+  font-weight: bold;
+}
+
+#word-count {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ── Buttons ── */
+button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+#theme-toggle {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+  padding: 8px 14px;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
