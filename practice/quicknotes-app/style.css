@@ -1,0 +1,287 @@
+/* ── 1. RESET ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ── 2. BASE ──────────────────────────────────────────── */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* ── 3. HEADER ────────────────────────────────────────── */
+header {
+  background-color: #8e0000;
+  color: white;
+  padding: 20px 16px;
+}
+
+.header-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+/* ── 4. MAIN ──────────────────────────────────────────── */
+main {
+  max-width: 700px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section {
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── 5. FORM ──────────────────────────────────────────── */
+#note-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+#note-form label {
+  width: 100%;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+#note-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 1rem;
+}
+
+#note-category {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* ── 6. BUTTONS ───────────────────────────────────────── */
+button {
+  background-color: #0ba184;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+  background-color: #088a70;
+  transform: translateY(-1px);
+}
+
+/* ── 7. ERROR MESSAGE ─────────────────────────────────── */
+.error {
+  color: #cc0000;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  margin: 8px 0 0;
+  font-weight: bold;
+}
+
+/* ── 8. SEARCH ────────────────────────────────────────── */
+#search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+/* ── 9. NOTE COUNT ────────────────────────────────────── */
+#note-count {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ── 10. NOTES LIST ───────────────────────────────────── */
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── 11. NOTE CARD ────────────────────────────────────── */
+.note-card {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  border-left-width: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #fafafa;
+}
+
+.note-body {
+  flex: 1;
+}
+
+.note-text {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.note-meta {
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.category-label {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+
+/* ── 12. CATEGORY COLOURS ─────────────────────────────── */
+.category-personal {
+  border-left-color: #0ba184;
+}
+
+.category-personal .category-label {
+  background-color: #e6f7f4;
+  color: #0ba184;
+}
+
+.category-work {
+  border-left-color: #8e0000;
+}
+
+.category-work .category-label {
+  background-color: #fdecea;
+  color: #8e0000;
+}
+
+.category-study {
+  border-left-color: #1a56db;
+}
+
+.category-study .category-label {
+  background-color: #ebf1fd;
+  color: #1a56db;
+}
+
+/* ── 13. DELETE BUTTON ────────────────────────────────── */
+.delete-btn {
+  background-color: #8e0000;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.delete-btn:hover {
+  background-color: #6b0000;
+}
+
+/* ── 14. EMPTY SEARCH MESSAGE ─────────────────────────── */
+.no-results {
+  color: #888;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+/* ── 15. CLEAR ALL BUTTON ─────────────────────────────── */
+.clear-all-btn {
+  margin-top: 16px;
+  background-color: #555;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+}
+
+.clear-all-btn:hover {
+  background-color: #333;
+}
+
+/* ── 16. FOOTER ───────────────────────────────────────── */
+footer {
+  text-align: center;
+  color: #888;
+  padding: 20px 16px;
+  font-size: 0.88rem;
+}
+
+/* ── 17. MEDIA QUERY — phones ─────────────────────────── */
+@media (max-width: 600px) {
+  header {
+    padding: 16px 12px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  #note-form {
+    flex-direction: column;
+  }
+
+  #note-input,
+  #note-category,
+  #note-form button {
+    width: 100%;
+  }
+
+  .note-card {
+    flex-direction: column;
+  }
+
+  .delete-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
