@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 5 — User Directory</title>
+    <script src="users.js" defer></script>
+    <style>
+      *,*::before,*::after { box-sizing: border-box; }
+      body { margin: 0; font-family: "Segoe UI", Arial, sans-serif;
+             background: #f4f6f8; color: #222; }
+      header { background: #8e0000; color: white; padding: 20px 16px; }
+      header h1 { margin: 0; }
+      main { max-width: 700px; margin: 24px auto; padding: 0 16px; }
+      #status { color: #555; font-style: italic; }
+      label { font-weight: bold; display: block; margin: 16px 0 4px; }
+      #filter-input { width: 100%; padding: 10px; border: 1px solid #ccc;
+                      border-radius: 6px; font: inherit; font-size: 1rem; }
+      #users-list { list-style: none; padding: 0; margin-top: 16px; }
+      .user-card { background: white; padding: 16px; margin-bottom: 12px;
+                   border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+      .user-name { font-weight: bold; font-size: 1.05rem; margin: 0 0 4px; }
+      .user-detail { color: #555; font-size: 0.9rem; margin: 2px 0; }
+      .no-results { color: #888; font-style: italic; padding: 8px 0; }
+      button { background: #0ba184; color: white; border: none;
+               padding: 10px 18px; border-radius: 6px; font-size: 1rem;
+               cursor: pointer; margin-bottom: 8px; }
+      button:hover { background: #088a70; }
+      button:disabled { background: #aaa; cursor: not-allowed; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>User Directory</h1>
+    </header>
+    <main>
+      <button id="load-users">Load users</button>
+      <p id="status"></p>
+      <label for="filter-input">Filter by name</label>
+      <input
+        type="search"
+        id="filter-input"
+        placeholder="Type to filter..."
+        autocomplete="off"
+      />
+      <ul id="users-list"></ul>
+    </main>
+  </body>
+</html>
